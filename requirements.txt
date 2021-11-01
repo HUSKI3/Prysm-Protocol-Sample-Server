@@ -1,0 +1,8 @@
+certifi==2021.10.8; python_version >= "2.7" and python_full_version < "3.0.0" or python_full_version >= "3.6.0" 
+charset-normalizer==2.0.7; python_full_version >= "3.6.0" and python_version >= "3" 
+idna==3.3; python_version >= "3.5" and python_full_version < "3.0.0" or python_full_version >= "3.6.0" and python_version >= "3.5" 
+pyqt5-qt5==5.15.2; python_version >= "3.6" 
+pyqt5-sip==12.9.0; python_version >= "3.6" 
+pyqt5==5.15.6; python_version >= "3.6" 
+requests==2.26.0; (python_version >= "2.7" and python_full_version < "3.0.0") or (python_full_version >= "3.6.0")
+urllib3==1.26.7; python_version >= "2.7" and python_full_version < "3.0.0" or python_full_version >= "3.6.0" and python_version < "4"

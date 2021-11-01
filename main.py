@@ -31,14 +31,14 @@ def handle_client(conn, addr):
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
 host = socket.gethostname()
-port = 2020
+port = int(os.environ.get('PORT', 5000))
 HEADERSIZE = 10
 
 s.bind((host, port))
 
 sockets_list = [s]
 
-print("Server started at: ", host)
+print("Server started at: ", host,port)
 
 s.listen(5)
 try:
