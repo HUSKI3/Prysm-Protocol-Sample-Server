@@ -1,0 +1,6 @@
+
+
+-- Web Server containing a specific folder that is shared through the prysm protocol with the client computer
+
+
+-- DNS Server containing a "url" that let's us connect to a prysm server
