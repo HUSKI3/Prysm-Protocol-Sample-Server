@@ -30,7 +30,7 @@ def handle_client(conn, addr):
 #
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
-host = socket.gethostname()
+host = '0.0.0.0' #socket.gethostname()
 port = int(os.environ.get('PORT', 5000))
 HEADERSIZE = 10
 
