@@ -61,8 +61,10 @@ class win(QtWidgets.QMainWindow):
     self.tabs.tabCloseRequested.connect(self.delete)
     self.tabs.setTabsClosable(True)
 
-    id = socket.gethostbyname('Sensor')
-    tab, name = self.generalTabUI(f"prysm://{id}/index.mp")
+    #id = socket.gethostbyname('Sensor')
+    #tab, name = self.generalTabUI(f"prysm://{id}/index.mp")
+    # UX410
+    tab, name = self.generalTabUI("prysm://192.168.2.2/",port=5000)
     self.tabs.addTab(tab, name )
 
     default_side = self.tabs.style().styleHint(
@@ -79,16 +81,16 @@ class win(QtWidgets.QMainWindow):
   def delete(self, index):
     self.tabs.removeTab(index)
 
-  def generalTabUI(self,url):
+  def generalTabUI(self,url,port=0):
     """Create the General page UI."""
     generalTab = QWidget()
     mainbox = QVBoxLayout()
 #  https://Sample-Prysm-Server.huski3.repl.co/test.mp
-    if 'prysm://' in url or 'Sample-Prysm-Server' in url:
-        if 'prysm://' in url:
+    if 'prysm://' in url or 'sample-prysm-server' in url:
+        if port != 0:
+            port = port
+        elif 'prysm://' in url:
             port = 2020
-        else:
-            port = 80
         url = url.replace('prysm://','').replace('https://','')
         host, uri = url.split('/',1)
         # Connect and wait for server details
